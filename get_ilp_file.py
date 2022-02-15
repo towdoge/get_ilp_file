@@ -19,9 +19,10 @@ if os.path.exists('file_name.txt'):
         if file_name[-3:] != '.lp':
             file_name += '.lp'
 
-# file_name = 'inventory.lp'
-
+# file_name = 'backorder.lp'
+print(work_dir)
 print(file_name)
+
 model = gb.gurobi.read(file_name)
 model.optimize()
 if model.Status == gb.GRB.INFEASIBLE:
