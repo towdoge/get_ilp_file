@@ -8,7 +8,7 @@ os.chdir(work_dir)
 SPLIT_STR = '\\' if 'win' in sys.platform else '/'
 work_dir = os.getcwd()
 file_names = [f for f in os.listdir(work_dir)
-              if f[-3:] == '.lp' and ('~' not in f)]
+              if f[-3:] == '.lp' and ('~' not in f) and 'label'not in f]
 file_names.sort(
     key=lambda f: os.path.getmtime(work_dir + SPLIT_STR + f))
 file_name = file_names[-1]
@@ -19,7 +19,7 @@ if os.path.exists('file_name.txt'):
         if file_name[-3:] != '.lp':
             file_name += '.lp'
 
-# file_name = 'backorder.lp'
+# file_name = 'slack.lp'
 print(work_dir)
 print(file_name)
 
